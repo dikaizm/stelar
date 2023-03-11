@@ -105,20 +105,20 @@
  * ------------------------------------------------------------------- */
 :root {
 
-    /* color-1(#d9083c)
-     * color-2(#eb5e55)
-     * color-3(#f2d0a4)
+    /* color-1(#22A8E0)
+     * color-2(#72D0F6)
+     * color-3(#BBEFFF)
      */
-    --color-1: hsla(345, 93%, 44%, 1);
-    --color-2: hsla(4, 79%, 63%, 1);
-    --color-3: hsla(34, 75%, 80%, 1);
+    --color-1: hsla(198, 75%, 51%, 1);
+    --color-2: hsla(197, 88%, 71%, 1);
+    --color-3: hsla(194, 100%, 87%, 1);
 
     /* theme color variations
      */
     --color-1-lighter: hsla(345, 93%, 64%, 1);
     --color-1-light  : hsla(345, 93%, 54%, 1);
     --color-1-dark   : hsla(345, 93%, 34%, 1);
-    --color-1-darker : hsla(345, 93%, 24%, 1);
+    --color-1-darker : hsla(213, 70%, 39%, 1);
     --color-2-lighter: hsla(4, 79%, 83%, 1);
     --color-2-light  : hsla(4, 79%, 73%, 1);
     --color-2-dark   : hsla(4, 79%, 53%, 1);
@@ -3133,8 +3133,8 @@ input::-moz-focus-inner {
 }
 
 .s-header__logo img {
-    width: 68px;
-    height: 10px;
+    width: 100px;
+    padding-top: 4px;
     margin-bottom: 0;
 }
 
@@ -3486,7 +3486,7 @@ input::-moz-focus-inner {
 }
 
 .s-hero__bg {
-    background-image: url(../images/hero-bg.jpg);
+    background-image: url(../images/hero-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -3543,6 +3543,10 @@ input::-moz-focus-inner {
     color: var(--color-1);
     margin-bottom: 0;
     position: relative;
+    background-image: linear-gradient(to right, #22A8E0, #72D0F6, #BBEFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 .s-hero__content h1::before {
@@ -4711,7 +4715,7 @@ html.no-csstransitions .s-hero__content {
 .s-contact__email {
     margin-top: var(--vspace-1_5);
     font-family: var(--font-2);
-    font-size: calc(var(--text-size) * 6.6);
+    font-size: calc(var(--text-size) * 4);
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1;
@@ -4734,13 +4738,13 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1600px) {
     .s-contact__email {
-        font-size: calc(var(--text-size) * 6);
+        font-size: calc(var(--text-size) * 4);
     }
 }
 
 @media screen and (max-width: 1200px) {
     .s-contact__email {
-        font-size: 10vw;
+        font-size: 7vw;
     }
 }
 
