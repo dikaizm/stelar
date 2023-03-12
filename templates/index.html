@@ -69,10 +69,16 @@
                 </ul>
             </nav> <!-- end s-header__nav-wrap -->
 
-            <a href="mailto:#0" class="btn btn--primary btn--small">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
-                Get In Touch
+            {% if user.is_authenticated %}
+            <a href="logout" class="btn btn--primary btn--small">
+                Logout
             </a>
+            {% else %}
+            <a href="register" class="btn btn--primary btn--small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                Login or Sign Up
+            </a>
+            {% endif %}
 
         </div> <!-- end header-content -->
 
@@ -92,7 +98,12 @@
         <div class="row s-hero__content">
             <div class="column">
 
+                {% if user.is_authenticated %}
+                <h1>Hello, {{user.username}}</h1>
+                {% else %}
                 <h1>Hello :)</h1>
+                {% endif %}
+                
                 <div class="s-hero__content-about">
 
                     <p>
