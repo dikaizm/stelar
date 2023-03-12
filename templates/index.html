@@ -105,7 +105,7 @@
                         <div class="s-hero__content-social">
                             <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                             <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/stelar.hub/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                             <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
                         </div>
                     </footer>
@@ -232,68 +232,16 @@
         </div>
 
         <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--product-design"></span>
-                <h3 class="item-title">Product Design</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--branding"></span>
-                <h3 class="item-title">Branding</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--frontend"></span>
-                <h3 class="item-title">Frontend Development</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--research"></span>
-                <h3 class="item-title">UX Research</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--illustration"></span>
-                <h3 class="item-title">Illustration</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--ecommerce"></span>
-                <h3 class="item-title">E-Commerce</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-        </div>
 
+            {% for service in services %}
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon"><img src="{{service.img}}" /></span>
+                <h3 class="item-title">{{service.name}}</h3>
+                <p>{{service.details}}</p>
+            </div>
+            {% endfor %}
+
+        </div>
     </section> <!-- end s-services -->
 
     <section id="portfolio" class="s-portfolio">
@@ -319,7 +267,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-red-wheel.jpg' %}" title="The Red Wheel" data-size="1050x700">
                             <img src="{% static 'images/portfolio/red-wheel.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/red-wheel.jpg 1x, images/portfolio/red-wheel@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/red-wheel.jpg' 1x, 'images/portfolio/red-wheel@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -337,7 +285,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-music-life.jpg' %}" title="Music Life" data-size="1050x700">
                             <img src="{% static 'images/portfolio/music-life.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/music-life.jpg 1x, images/portfolio/music-life@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/music-life.jpg' 1x, 'images/portfolio/music-life@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -355,7 +303,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-oi-logo.jpg' %}" Title="OI Logo" data-size="1050x700">
                             <img src="{% static 'images/portfolio/oi-logo.jpg.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/oi-logo.jpg 1x, images/portfolio/oi-logo@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/oi-logo.jpg' 1x, 'images/portfolio/oi-logo@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -373,7 +321,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-corrugated-sheets.jpg' %}" title="Corrugated Sheets" data-size="1050x700">
                             <img src="{% static 'images/portfolio/corrugated-sheets.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/corrugated-sheets.jpg 1x, images/portfolio/corrugated-sheets@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/corrugated-sheets.jpg' 1x, 'images/portfolio/corrugated-sheets@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -391,7 +339,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-woodcraft.jpg' %}" title="Sand Dunes" data-size="1050x700">
                             <img src="{% static 'images/portfolio/woodcraft.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/woodcraft.jpg' 1x, 'images/portfolio/woodcraft@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -411,7 +359,7 @@
                     <div class="folio-item__thumb">
                         <a class="folio-item__thumb-link" href="{% static 'images/portfolio/gallery/g-lamp.jpg' %}" title="The Lamp" data-size="1050x700">
                             <img src="{% static 'images/portfolio/lamp.jpg' %}" 
-                                 srcset="{% static 'images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x' %}" alt="">
+                                 srcset="{% static 'images/portfolio/lamp.jpg' 1x, 'images/portfolio/lamp@2x.jpg' 2x %}" alt="">
                         </a>
                     </div>
                     <div class="folio-item__info">
@@ -447,15 +395,10 @@
             <div class="column">
                 <div class="clients" data-aos="fade-up">
                     
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/dropbox.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/atom.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/github.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/redhat.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/medium.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/messenger.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/steam.svg' %}" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="{% static 'images/icons/clients/spotify.svg' %}" /></a>
-                     
+                    {% for client in clients %}
+                    <a href="#0" title="{{client.name}}" class="clients__slide"><img src="{{client.img}}" /></a>
+                    {% endfor %}
+
                 </div> <!-- end clients -->
             </div> <!-- end column -->
         </div> <!-- end clients-outer -->
@@ -590,7 +533,7 @@
                         <ul class="s-footer__list">
                             <li><a href="#0">Facebook</a></li>
                             <li><a href="#0">Twitter</a></li>
-                            <li><a href="#0">Instagram</a></li>
+                            <li><a href="https://www.instagram.com/stelar.hub/" target="_blank">Instagram</a></li>
                             <li><a href="#0">Dribbble</a></li>
                         </ul>
                     </div>
@@ -602,7 +545,7 @@
 
                 <div class="ss-copyright">
                     <span>Copyright <script>document.write(new Date().getFullYear())</script> Stelar</span> 
-                    <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    <span>Design by <a href="https://www.styleshout.com/" target="_blank">StyleShout</a></span>
                 </div>
             </div>
 
