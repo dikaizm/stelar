@@ -9,5 +9,5 @@ class Client:
 
 class Service(models.Model):
     name = models.CharField(max_length=30)
-    details = models.CharField(max_length=400)
+    details = models.TextField(max_length=400)
     img = models.FileField(upload_to='static/images/icons/services/', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png', 'svg'])])

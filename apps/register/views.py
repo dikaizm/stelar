@@ -11,7 +11,39 @@ def register(request):
         passwordrepeat = request.POST['passwordrepeat']
 
         if password == passwordrepeat:
-            if User.objects.filter(email==email).exists():
-                messages.info(request, 'Email already used')
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email already used!')
+                return redirect('register')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username already used!')
+                return redirect('register')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save()
+                return redirect('login')
+        else:
+            messages.info(request, 'Password not the same!')
+            return redirect('register')
+    else:
+        return render(request, 'register.html')
+    
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
 
-    return render(request, 'register.html')
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Credential invalid')
+            return redirect('login')
+    
+    else:
+        return render(request, 'login.html')
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
