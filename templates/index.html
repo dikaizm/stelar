@@ -241,7 +241,18 @@
                 </p>
             </div>
         </div>
-        
+
+        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
+
+            {% for service in services %}
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon"><img src="{{service.img}}" /></span>
+                <h3 class="item-title">{{service.name}}</h3>
+                <p>{{service.details}}</p>
+            </div>
+            {% endfor %}
+
+        </div>
     </section> <!-- end s-services -->
 
     <section id="portfolio" class="s-portfolio">
