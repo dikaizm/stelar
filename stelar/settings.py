@@ -77,25 +77,28 @@ WSGI_APPLICATION = 'stelar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'stelar_db',
-#         'USER': 'admin',
-#         'PASSWORD': '1234',
-#         'HOST': 'localhost',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd816pop4o3ljcm',
-        'USER': 'xqrbnlurthnzjt',
-        'PASSWORD': '072bad23b2b7a88c8fc521be3856e38b43104e59109746300bbf39aa6e84fd7b',
-        'HOST': 'ec2-34-202-127-5.compute-1.amazonaws.com',
+        'NAME': 'stelar_db',
+        'USER': 'admin',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd816pop4o3ljcm',
+#         'USER': 'xqrbnlurthnzjt',
+#         'PASSWORD': '072bad23b2b7a88c8fc521be3856e38b43104e59109746300bbf39aa6e84fd7b',
+#         'HOST': 'ec2-34-202-127-5.compute-1.amazonaws.com',
+#     }
+# }
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

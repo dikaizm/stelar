@@ -9,6 +9,7 @@ pbr==5.11.1
 Pillow==9.4.0
 platformdirs==3.1.1
 psycopg2==2.9.5
+psycopg2-binary==2.9.5
 sqlparse==0.4.3
 stevedore==5.0.0
 virtualenv==20.20.0
