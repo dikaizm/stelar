@@ -98,7 +98,7 @@
 		<!-- End Fixed Left Share -->
 
 		<!-- Begin Post -->
-		
+		{% for post in posts %}
 		<div class="col-md-8 col-md-offset-2 col-xs-12">
 			<div class="mainheading">
 
@@ -124,11 +124,9 @@
 			<!-- End Featured Image -->
 
 			<!-- Begin Post Content -->
-			{% for post in posts %}
 			<div class="article-post">
 				{{post.body}}
 			</div>
-			{% endfor %}
 			<!-- End Post Content -->
 
 			<!-- Begin Tags -->
@@ -143,7 +141,7 @@
 			<!-- End Tags -->
 
 		</div>
-		
+		{% endfor %}
 		<!-- End Post -->
 
 	</div>
